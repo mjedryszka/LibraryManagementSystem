@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <!-- Tittle-->
+        <div id="welcome">
+            <h1>Library management system</h1>
+        </div>
+        <!-- Left menu-->
+        <div id="libraryLeftMenu">
+            <!-- Left menu buttons-->
+            <button id="allBooksList" class="button">
+            All books list
+            </button>
+            <button id="searchByName" class="button">
+            Search by name
+            </button>
+            <button id="searchByCategory" class="button">
+                Search by category
+            </button>
+            <button id="searchByRating" class="button">
+                Search by rating
+            </button>
+        </div>
+        <!-- Middle menu-->
+        <div id="libraryCenterMenu">
+            Small
+        </div>
+        <!-- Right menu-->
+        <div id="libraryRightMenu">
+            <p id="userNameLabel">
+                User name
+            </p>
+            <button id="login" class="button">
+                Login
+            </button>
+            <button id="createAccount" class="button">
+                Create account
+            </button>
+        </div>
+    </div>
+    <script>
+    const API_URL = "http://localhost:8080/LibraryManagementSystem"
+
+
+    document.getElementById("allBooksList").addEventListener("click", (event) => {
+        event.preventDefault();
+        fetch(API_URL + "/hello")
+        .then(response => response.text())
+        .then((text) => {
+        document.getElementById("libraryCenterMenu").innerHTML = text;
+        });
+    });
+    </script>
+
+</body>
+</html>
