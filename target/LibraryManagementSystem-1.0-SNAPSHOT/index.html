@@ -3,60 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <title>Library Management System</title>
+    <!-- CSS-->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="container">
-        <!-- Tittle-->
-        <div id="welcome">
-            <h1>Library management system</h1>
-        </div>
-        <!-- Left menu-->
-        <div id="libraryLeftMenu">
-            <!-- Left menu buttons-->
-            <button id="allBooksList" class="button">
+<div id="container" class="container">
+    <!-- Tittle-->
+    <div id="welcome">
+        <h1>Library management system</h1>
+    </div>
+    <!-- Left menu-->
+    <div id="libraryLeftMenu">
+        <!-- Left menu buttons-->
+        <button id="allBooksList" class="button">
             All books list
-            </button>
-            <button id="searchByName" class="button">
+        </button>
+        <button id="searchByName" class="button">
             Search by name
-            </button>
-            <button id="searchByCategory" class="button">
-                Search by category
-            </button>
-            <button id="searchByRating" class="button">
-                Search by rating
-            </button>
-        </div>
-        <!-- Middle menu-->
-        <div id="libraryCenterMenu">
-            Small
-        </div>
-        <!-- Right menu-->
-        <div id="libraryRightMenu">
-            <p id="userNameLabel">
-                User name
-            </p>
-            <button id="login" class="button">
+        </button>
+        <button id="searchByCategory" class="button">
+            Search by category
+        </button>
+        <button id="searchByRating" class="button">
+            Search by rating
+        </button>
+    </div>
+    <!-- Middle menu-->
+    <div id="libraryCenterMenu">
+         <!--Home page Form-->
+        <form id="homePageForm" class="manageAccountForm">
+            Small library management system.
+        </form>
+         <!--Login form-->
+        <form id="loginForm" class="manageAccountForm" style="visibility:hidden">
+            <input id="loginPlaceholder" type="text" placeholder="Login" class="manageAccountInputs" />
+            <input id="passwordPlaceholder" type="password" placeholder="Password" class="manageAccountInputs" />
+            <button id="loginButton" type="submit" class="manageAccountInputs">
                 Login
             </button>
-            <button id="createAccount" class="button">
+        </form>
+        <!-- Create account form-->
+        <form id="createAccountForm" class="manageAccountForm" style="visibility:hidden">
+            <input id="loginPlaceholderInCA" type="email" placeholder="Login" class="manageAccountInputs" />
+            <input id="passwordPlaceholderInCA" type="password" placeholder="Password" class="manageAccountInputs" />
+            <input id="repeatPasswordPlaceholderInCA" type="password" placeholder="Repeat password" class="manageAccountInputs"/>
+            <button id="createAccountButtonInCA" type="submit" class="manageAccountInputs">
                 Create account
             </button>
-        </div>
+        </form>
     </div>
-    <script>
-    const API_URL = "http://localhost:8080/LibraryManagementSystem"
-
-
-    document.getElementById("allBooksList").addEventListener("click", (event) => {
-        event.preventDefault();
-        fetch(API_URL + "/hello")
-        .then(response => response.text())
-        .then((text) => {
-        document.getElementById("libraryCenterMenu").innerHTML = text;
-        });
-    });
-    </script>
-
+    <!-- Right menu-->
+    <div id="libraryRightMenu">
+        <p id="userNameLabel">
+            User name
+        </p>
+        <button id="login" class="button">
+            Login
+        </button>
+        <button id="logout" class="button">
+            Logout
+        </button>
+        <button id="createAccount" class="button">
+            Create account
+        </button>
+    </div>
+</div>
+<!-- Script-->
+<script src="script.js"></script>
 </body>
 </html>
