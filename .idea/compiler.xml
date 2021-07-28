@@ -26,9 +26,8 @@
         <module name="ManagementLibrarySystem" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
       <module name="LibraryManagementSystem" target="1.5" />
-      <module name="ManagementLibrarySystem" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

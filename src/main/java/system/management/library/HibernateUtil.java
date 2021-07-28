@@ -21,7 +21,7 @@ public class HibernateUtil {
     public static void closeEntityManager() {
         if (entityManager != null) {
             entityManager.close();
-            ENTITY_MANAGER_FACTORY.close();
+            entityManager = null;
         }
     }
 

@@ -1,9 +1,12 @@
 package system.management.library.login;
 
+
+import system.management.library.User;
+
 /**
  * Created by Home on 2021-07-21.
  */
-public class LoginService {
+class LoginService {
     private final static String LOGIN_OR_PASSWORD_IS_TOO_SHORT = "Login or password is too short";
     private final static String LOGIN_OR_PASSWORD_IS_NOT_CORRECT = "Login or password is not correct";
     private static final String LOGIN_SUCCESS = "Ok";
@@ -36,11 +39,11 @@ public class LoginService {
     }
 
     private void getUser(String login) {
-        user = loginRepository.getUserFromDB(login);
+        user = loginRepository.getUserFromDB(login).orElse(null);
     }
 
     private boolean isUserExist() {
-        return !user.getLogin().isEmpty();
+        return user != null;
     }
 
     private boolean confirmPassword(String password) {

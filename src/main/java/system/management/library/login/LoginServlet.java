@@ -30,11 +30,8 @@ public class LoginServlet extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println(req.getParameterMap());
         String login = req.getParameter(LOGIN_PARAM);
         String password = req.getParameter(PASSWORD_PARAM);
-        System.out.println(login + " " + password);
-        loginService.loginReturnValue(login, password);
-        System.out.println(loginService.loginReturnValue(login, password));
+        resp.getWriter().write(loginService.loginReturnValue(login, password));
     }
 }
