@@ -1,9 +1,7 @@
 package system.management.library.login;
 
 
-import com.sun.corba.se.spi.servicecontext.UEInfoServiceContext;
 import system.management.library.HibernateUtil;
-import system.management.library.Test;
 import system.management.library.User;
 
 import javax.persistence.EntityManager;
@@ -15,10 +13,14 @@ import java.util.Optional;
  */
 class LoginRepository {
     private static final String GET_USER_QUERY = "SELECT u FROM User u WHERE u.login LIKE :login";
+    private EntityManager entityManager;
+    private User user;
+
+    protected LoginRepository(){
+        this.entityManager = HibernateUtil.getEntityManager();
+    }
 
     protected Optional<User> getUserFromDB(String login) {
-        EntityManager entityManager = HibernateUtil.getEntityManager();
-        User user;
         try {
             entityManager.getTransaction().begin();
             user = entityManager.createQuery(GET_USER_QUERY, User.class)

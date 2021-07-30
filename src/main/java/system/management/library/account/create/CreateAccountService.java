@@ -39,7 +39,7 @@ public class CreateAccountService {
 
     private void checkIfLoginIsUnused(String login) {
         if (accountStatus == null) {
-            CompareLogins compareLogins = new CompareLogins();
+            CompareLogins compareLogins = new CompareLogins(new CreateAccountRepository());
             boolean isLoginUnused = compareLogins.isLoginUnused(login);
             if (!isLoginUnused) {
                 accountStatus = LOGIN_EXIST;

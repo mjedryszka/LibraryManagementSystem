@@ -7,8 +7,8 @@ import system.management.library.User;
  * Created by Home on 2021-07-21.
  */
 class LoginService {
-    private final static String LOGIN_OR_PASSWORD_IS_TOO_SHORT = "Login or password is too short";
-    private final static String LOGIN_OR_PASSWORD_IS_NOT_CORRECT = "Login or password is not correct";
+    private static final String LOGIN_OR_PASSWORD_IS_TOO_SHORT = "Login or password is too short";
+    private static final String LOGIN_OR_PASSWORD_IS_NOT_CORRECT = "Login or password is not correct";
     private static final String LOGIN_SUCCESS = "Ok";
     private LoginRepository loginRepository;
     private User user;
