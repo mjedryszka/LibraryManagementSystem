@@ -15,12 +15,12 @@ document.getElementById("allBooksList").addEventListener("click", (event) => {
     });
 
 document.getElementById("createAccountButtonInCA").addEventListener("click", (event) => {
-    event.preventDefault():
+    event.preventDefault();
     const createAccountObj = {
     login: createAccountForm.elements.loginPlaceholderInCA.value,
     password: createAccountForm.elements.passwordPlaceholderInCA.value,
     repeatPassword createAccountForm.elements.repeatPasswordPlaceholderInCA.value
-    }
+    };
     fetch(LMS_URL + "/createaccount" + "?" + new URLSearchParams(createAccountObj))
     .then(response => response.text())
     .then((text) => {

@@ -8,7 +8,7 @@ import javax.persistence.EntityManager;
 /**
  * Created by Home on 2021-07-23.
  */
-public class CreateAccountService {
+class CreateAccountService {
     private static final String LOGIN_PASSWORD_TO_SHORT = "Login and password must have min 3 signs";
     private static final String PASSWORD_NOT_EQUAL_REPEATED_PASSWORD = "Password and repeated password are not the same";
     private static final String LOGIN_EXIST = "Login already exist";
@@ -22,7 +22,7 @@ public class CreateAccountService {
         this.createAccountInDB = createAccountInDB;
     }
 
-    public String createAccountReturnValue(String login, String password, String repeatPassword) {
+    protected String createAccountReturnValue(String login, String password, String repeatPassword) {
         checkIfLoginAndPasswordContainMinThreeChar(login, password);
         checkIfPasswordEqualRepeatedPassword(password, repeatPassword);
         checkIfLoginIsUnused(login);
