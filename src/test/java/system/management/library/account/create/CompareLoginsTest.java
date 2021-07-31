@@ -26,6 +26,7 @@ public class CompareLoginsTest {
         //then
         Assert.assertTrue(result);
     }
+
     @Test
     public void test_IsLoginUnused_usedLogin_returnFalse() throws Exception {
         //given
@@ -38,6 +39,7 @@ public class CompareLoginsTest {
         //then
         Assert.assertFalse(result);
     }
+
     @Test
     public void test_IsLoginUnused_unusedLogin_returnTrue() throws Exception {
         //given
@@ -50,7 +52,8 @@ public class CompareLoginsTest {
         //then
         Assert.assertTrue(result);
     }
-    private List<String> loginsList(){
+
+    private List<String> loginsList() {
         List<String> logins = new ArrayList<String>();
         logins.add("Borys");
         return logins;

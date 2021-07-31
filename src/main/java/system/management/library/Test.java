@@ -29,9 +29,9 @@ public class Test {
 //        if (user.equals(null)){
 //            System.out.println("null");
 //        }
-        CreateAccountService createAccountService = new CreateAccountService();
-        String re = createAccountService.createAccountReturnValue("Borys7", "123", "123");
-        System.out.println(re);
+//        CreateAccountService createAccountService = new CreateAccountService();
+//        String re = createAccountService.createAccountReturnValue("Borys7", "123", "123");
+//        System.out.println(re);
     }
 
 }

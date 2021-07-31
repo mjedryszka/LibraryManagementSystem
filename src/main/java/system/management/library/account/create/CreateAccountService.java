@@ -13,7 +13,14 @@ public class CreateAccountService {
     private static final String PASSWORD_NOT_EQUAL_REPEATED_PASSWORD = "Password and repeated password are not the same";
     private static final String LOGIN_EXIST = "Login already exist";
     private static final String ACCOUNT_CREATED = "Ok";
+    CompareLogins compareLogins;
+    CreateAccountInDB createAccountInDB;
     private String accountStatus = null;
+
+    protected CreateAccountService(CompareLogins compareLogins,CreateAccountInDB createAccountInDB) {
+        this.compareLogins = compareLogins;
+        this.createAccountInDB = createAccountInDB;
+    }
 
     public String createAccountReturnValue(String login, String password, String repeatPassword) {
         checkIfLoginAndPasswordContainMinThreeChar(login, password);
@@ -39,7 +46,6 @@ public class CreateAccountService {
 
     private void checkIfLoginIsUnused(String login) {
         if (accountStatus == null) {
-            CompareLogins compareLogins = new CompareLogins(new CreateAccountRepository());
             boolean isLoginUnused = compareLogins.isLoginUnused(login);
             if (!isLoginUnused) {
                 accountStatus = LOGIN_EXIST;
@@ -49,16 +55,8 @@ public class CreateAccountService {
 
     private void createAccount(String login, String password) {
         if (accountStatus == null) {
-            User user = new User(login, password);
-            EntityManager entityManager = HibernateUtil.getEntityManager();
-            try {
-                entityManager.getTransaction().begin();
-                entityManager.persist(user);
-                entityManager.getTransaction().commit();
-                accountStatus = ACCOUNT_CREATED;
-            } finally {
-                HibernateUtil.closeEntityManager();
-            }
+            createAccountInDB.createNewAccount(login,password);
+            accountStatus = ACCOUNT_CREATED;
         }
     }
 }

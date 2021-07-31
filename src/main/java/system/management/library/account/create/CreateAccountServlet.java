@@ -17,9 +17,9 @@ public class CreateAccountServlet extends HttpServlet {
     private static final String REPEAT_PASSWORD_PARAM = "repeatPassword";
     private CreateAccountService createAccountService;
 
-    public CreateAccountServlet(){
-        this(new CreateAccountService());
-    }
+//    public CreateAccountServlet(){
+//        this(new CreateAccountService());
+//    }
 
     private CreateAccountServlet(CreateAccountService createAccountService){
         this.createAccountService = createAccountService;

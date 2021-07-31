@@ -20,9 +20,11 @@ public class LoginServiceTest {
     @Test
     public void test_loginReturnValue_returnLoginToShort() {
         //given
-        LoginService SUT = new LoginService();
         String login = "Bo";
         String password = "123";
+        LoginRepository loginRepository = mock(LoginRepository.class);
+        LoginService SUT = new LoginService(loginRepository);
+        when(loginRepository.getUserFromDB(login)).thenReturn(user());
         //when
         String result = SUT.loginReturnValue(login, password);
         //then
@@ -32,9 +34,11 @@ public class LoginServiceTest {
     @Test
     public void test_loginReturnValue_returnPasswordToShort() {
         //given
-        LoginService SUT = new LoginService();
         String login = "Bor";
         String password = "12";
+        LoginRepository loginRepository = mock(LoginRepository.class);
+        LoginService SUT = new LoginService(loginRepository);
+        when(loginRepository.getUserFromDB(login)).thenReturn(user());
         //when
         String result = SUT.loginReturnValue(login, password);
         //then
@@ -44,10 +48,12 @@ public class LoginServiceTest {
     @Test
     public void test_loginReturnValue_returnLoginAndPassToShort() {
         //given
-        LoginService SUT = new LoginService();
-        //when
         String login = "Bo";
         String password = "12";
+        LoginRepository loginRepository = mock(LoginRepository.class);
+        LoginService SUT = new LoginService(loginRepository);
+        when(loginRepository.getUserFromDB(login)).thenReturn(user());
+        //when
         String result = SUT.loginReturnValue(login, password);
         //then
         assertEquals(LOGIN_OR_PASSWORD_IS_TOO_SHORT, result);
