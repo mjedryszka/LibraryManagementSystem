@@ -5,18 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2958d3ca-fa19-4c99-9104-551bf8da5cd9" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\Home\IdeaProjects\LibraryManagementSystem\src\main\webapp\script.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/LibraryManagementSystem-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/LibraryManagementSystem-1.0-SNAPSHOT.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/management/library/account/create/CompareLogins.java" afterPath="$PROJECT_DIR$/src/main/java/system/management/library/account/create/CompareLogins.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/management/library/account/create/CreateAccountService.java" afterPath="$PROJECT_DIR$/src/main/java/system/management/library/account/create/CreateAccountService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/management/library/account/create/CreateAccountServlet.java" afterPath="$PROJECT_DIR$/src/main/java/system/management/library/account/create/CreateAccountServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LibraryManagementSystem.iml" afterPath="$PROJECT_DIR$/LibraryManagementSystem.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/management/library/login/LoginRepository.java" afterPath="$PROJECT_DIR$/src/main/java/system/management/library/login/LoginRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/management/library/login/LoginService.java" afterPath="$PROJECT_DIR$/src/main/java/system/management/library/login/LoginService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/management/library/login/LoginServlet.java" afterPath="$PROJECT_DIR$/src/main/java/system/management/library/login/LoginServlet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/LibraryManagementSystem-1.0-SNAPSHOT/index.html" afterPath="$PROJECT_DIR$/target/LibraryManagementSystem-1.0-SNAPSHOT/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/scripts.js" afterPath="$PROJECT_DIR$/src/main/webapp/scripts.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ManagementLibrarySystem.iws" />
@@ -44,7 +36,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/system/management/library/account/create/CreateAccountServlet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
+              <caret line="27" column="113" selection-start-line="27" selection-start-column="113" selection-end-line="27" selection-end-column="113" />
               <folding>
                 <element signature="e#747#748#0" expanded="true" />
                 <element signature="e#795#796#0" expanded="true" />
@@ -56,9 +48,22 @@
       <file leaf-file-name="scripts.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.11371238">
-              <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.6633222">
+              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-19.576923">
+              <caret line="55" column="72" selection-start-line="55" selection-start-column="72" selection-end-line="55" selection-end-column="72" />
+              <folding>
+                <element signature="n#style#0;n#form#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#form#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -67,23 +72,10 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/system/management/library/account/create/CreateAccountService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+              <caret line="32" column="92" selection-start-line="32" selection-start-column="92" selection-end-line="32" selection-end-column="92" />
               <folding>
                 <element signature="e#640#641#0" expanded="true" />
                 <element signature="e#706#707#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CompareLogins.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/system/management/library/account/create/CompareLogins.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
-              <folding>
-                <element signature="method#CompareLogins#1;class#CompareLogins#0" expanded="false" />
-                <element signature="method#isLoginUnused#0;class#CompareLogins#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -100,20 +92,6 @@
                 <element signature="e#751#752#0" expanded="true" />
                 <element signature="e#799#800#0" expanded="true" />
                 <element signature="method#doGet#0;class#LoginServlet#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/system/management/library/login/LoginService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-              <folding>
-                <element signature="method#loginReturnValue#0;class#LoginService#0" expanded="false" />
-                <element signature="method#isLoginAndPasswordContainMinThreeChar#0;class#LoginService#0" expanded="false" />
-                <element signature="method#getUser#0;class#LoginService#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -175,15 +153,15 @@
         <option value="$PROJECT_DIR$/src/main/java/system/management/library/Test.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/script.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/script1.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
         <option value="$PROJECT_DIR$/src/main/java/system/management/library/login/LoginTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/system/management/library/login/LoginService.java" />
         <option value="$PROJECT_DIR$/src/main/java/system/management/library/login/LoginServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/system/management/library/login/LoginRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/system/management/library/account/create/CompareLogins.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
         <option value="$PROJECT_DIR$/src/main/java/system/management/library/account/create/CreateAccountServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/scripts.js" />
         <option value="$PROJECT_DIR$/src/main/java/system/management/library/account/create/CreateAccountService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/scripts.js" />
       </list>
     </option>
   </component>
@@ -547,7 +525,7 @@
     <property name="dynamic.classpath" value="false" />
     <property name="FullScreen" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../mavenLearn" />
-    <property name="SearchEverywhereHistoryKey" value="termi&#9;ACTION&#9;ActivateTerminalToolWindow&#10;term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow" />
+    <property name="SearchEverywhereHistoryKey" value="term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;termi&#9;ACTION&#9;ActivateTerminalToolWindow&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow" />
     <property name="recentsLimit" value="5" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -952,7 +930,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1258,13 +1236,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9082426">
-          <caret line="77" column="7" selection-start-line="77" selection-start-column="7" selection-end-line="77" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/LibraryManagementSystem.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1339,17 +1310,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/system/management/library/account/create/CompareLogins.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
-          <folding>
-            <element signature="method#CompareLogins#1;class#CompareLogins#0" expanded="false" />
-            <element signature="method#isLoginUnused#0;class#CompareLogins#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/system/management/library/account/create/CreateAccountServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1358,13 +1318,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.576923">
+          <caret line="55" column="72" selection-start-line="55" selection-start-column="72" selection-end-line="55" selection-end-column="72" />
+          <folding>
+            <element signature="n#style#0;n#form#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/system/management/library/account/create/CreateAccountServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="113" selection-start-line="27" selection-start-column="113" selection-end-line="27" selection-end-column="113" />
+          <folding>
+            <element signature="e#747#748#0" expanded="true" />
+            <element signature="e#795#796#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/system/management/library/account/create/CompareLogins.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27994013">
+          <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
+          <folding>
+            <element signature="method#CompareLogins#1;class#CompareLogins#0" expanded="false" />
+            <element signature="method#isLoginUnused#0;class#CompareLogins#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/system/management/library/account/create/CreateAccountService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+          <caret line="32" column="92" selection-start-line="32" selection-start-column="92" selection-end-line="32" selection-end-column="92" />
           <folding>
             <element signature="e#640#641#0" expanded="true" />
             <element signature="e#706#707#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/system/management/library/login/LoginService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2035928">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding>
+            <element signature="method#loginReturnValue#0;class#LoginService#0" expanded="false" />
+            <element signature="method#isLoginAndPasswordContainMinThreeChar#0;class#LoginService#0" expanded="false" />
+            <element signature="method#getUser#0;class#LoginService#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1383,33 +1388,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/system/management/library/login/LoginService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-          <folding>
-            <element signature="method#loginReturnValue#0;class#LoginService#0" expanded="false" />
-            <element signature="method#isLoginAndPasswordContainMinThreeChar#0;class#LoginService#0" expanded="false" />
-            <element signature="method#getUser#0;class#LoginService#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/system/management/library/account/create/CreateAccountServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
-          <folding>
-            <element signature="e#747#748#0" expanded="true" />
-            <element signature="e#795#796#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.11371238">
-          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.6633222">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -26,14 +26,9 @@ public class CreateAccountServlet extends HttpServlet {
     }
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("Servlet class");
-        System.out.println(req.getParameterMap());
         String login = req.getParameter(LOGIN_PARAM);
         String password = req.getParameter(PASSWORD_PARAM);
         String repeatPassword = req.getParameter(REPEAT_PASSWORD_PARAM);
-        System.out.println(login);
-        System.out.println(password);
-        System.out.println(repeatPassword);
         resp.getWriter().write(createAccountService.createAccountReturnValue(login,password,repeatPassword));
     }
 }

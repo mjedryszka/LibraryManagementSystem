@@ -27,14 +27,10 @@ class CreateAccountService {
         checkIfPasswordEqualRepeatedPassword(password, repeatPassword);
         checkIfLoginIsUnused(login);
         createAccount(login, password);
-        System.out.println(accountStatus);
         return accountStatus;
     }
 
     private void checkIfLoginAndPasswordContainMinThreeChar(String login, String password) {
-        System.out.println("chechk");
-        System.out.println(login);
-        System.out.println(password);
         if (login.length() < 3 || password.length() < 3) {
             System.out.println("nie");
             accountStatus = LOGIN_PASSWORD_TO_SHORT;

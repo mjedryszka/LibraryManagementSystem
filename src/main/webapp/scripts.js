@@ -24,7 +24,16 @@ document.getElementById("createAccountButtonInCA").addEventListener("click", (ev
     fetch(LMS_URL + "/createaccount" + "?" + new URLSearchParams(createAccountObj))
     .then(response => response.text())
     .then((text) => {
-        console.log(text);
+        if(text == "Ok"){
+            document.getElementById("userNameLabel").innerHTML = createAccountObj.login;
+        	document.getElementById("userNameLabel").style.backgroundColor = "green"
+            showForm("homePageForm");
+        }else{
+            document.getElementById("createAccountStatus").innerHTML = text;
+            document.getElementById("loginPlaceholderInCA").value = "";
+            document.getElementById("passwordPlaceholderInCA").value = "";
+            document.getElementById("repeatPasswordPlaceholderInCA").value = "";
+            }
         });
     });
 
@@ -64,6 +73,9 @@ document.getElementById("login").addEventListener("click",(event) =>{
     });
 
 document.getElementById("createAccount").addEventListener("click",(event) =>{
+    document.getElementById("loginPlaceholderInCA").value = "";
+    document.getElementById("passwordPlaceholderInCA").value = "";
+    document.getElementById("repeatPasswordPlaceholderInCA").value = "";
     showForm("createAccountForm");
     });
 	
