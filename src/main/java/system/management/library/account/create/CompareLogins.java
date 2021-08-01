@@ -9,13 +9,17 @@ class CompareLogins {
     private CreateAccountRepository createAccountRepository;
     private List<String> loginsList;
 
+    protected CompareLogins() {
+        this(new CreateAccountRepository());
+    }
+
     protected CompareLogins(CreateAccountRepository createAccountRepository) {
         this.createAccountRepository = createAccountRepository;
     }
 
     protected boolean isLoginUnused(String login) {
         getLoginsList();
-        if (loginsList == null){
+        if (loginsList == null) {
             return true;
         }
         for (String loginFromDB : loginsList) {

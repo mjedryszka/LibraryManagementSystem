@@ -16,11 +16,9 @@ class LoginRepository {
     private EntityManager entityManager;
     private User user;
 
-    protected LoginRepository(){
-        this.entityManager = HibernateUtil.getEntityManager();
-    }
 
     protected Optional<User> getUserFromDB(String login) {
+        entityManager = HibernateUtil.getEntityManager();
         try {
             entityManager.getTransaction().begin();
             user = entityManager.createQuery(GET_USER_QUERY, User.class)

@@ -29,9 +29,9 @@ public class LoginServlet extends HttpServlet{
     }
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String login = request.getParameter(LOGIN_PARAM);
-        String password = request.getParameter(PASSWORD_PARAM);
-        response.getWriter().write(loginService.loginReturnValue(login, password));
+    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        String login = req.getParameter(LOGIN_PARAM);
+        String password = req.getParameter(PASSWORD_PARAM);
+        res.getWriter().write(loginService.loginReturnValue(login, password));
     }
 }

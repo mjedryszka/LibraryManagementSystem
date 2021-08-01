@@ -17,9 +17,9 @@ public class CreateAccountServlet extends HttpServlet {
     private static final String REPEAT_PASSWORD_PARAM = "repeatPassword";
     private CreateAccountService createAccountService;
 
-//    public CreateAccountServlet(){
-//        this(new CreateAccountService());
-//    }
+    public CreateAccountServlet(){
+        this(new CreateAccountService());
+    }
 
     private CreateAccountServlet(CreateAccountService createAccountService){
         this.createAccountService = createAccountService;
@@ -31,7 +31,9 @@ public class CreateAccountServlet extends HttpServlet {
         String login = req.getParameter(LOGIN_PARAM);
         String password = req.getParameter(PASSWORD_PARAM);
         String repeatPassword = req.getParameter(REPEAT_PASSWORD_PARAM);
-
-
+        System.out.println(login);
+        System.out.println(password);
+        System.out.println(repeatPassword);
+        resp.getWriter().write(createAccountService.createAccountReturnValue(login,password,repeatPassword));
     }
 }

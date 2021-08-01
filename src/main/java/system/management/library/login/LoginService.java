@@ -11,7 +11,7 @@ class LoginService {
     private static final String LOGIN_OR_PASSWORD_IS_NOT_CORRECT = "Login or password is not correct";
     private static final String LOGIN_SUCCESS = "Ok";
     private LoginRepository loginRepository;
-    private User user;
+    private User user = null;
 
     protected LoginService() {
         this(new LoginRepository());
@@ -40,6 +40,7 @@ class LoginService {
 
     private void getUser(String login) {
         user = loginRepository.getUserFromDB(login).orElse(null);
+        System.out.println(user);
     }
 
     private boolean isUserExist() {
