@@ -1,28 +1,32 @@
 package system.management.library.account.create;
 
+import system.management.library.database.UserDao;
+import system.management.library.users.User;
+
 import java.util.List;
 
 /**
  * Created by Home on 2021-07-26.
  */
 class CompareLogins {
-    private CreateAccountRepository createAccountRepository;
-    private List<String> loginsList;
+    private UserDao userDao;
+    private List<User> users;
 
     protected CompareLogins() {
-        this(new CreateAccountRepository());
+        this(new UserDao());
     }
 
-    protected CompareLogins(CreateAccountRepository createAccountRepository) {
-        this.createAccountRepository = createAccountRepository;
+    protected CompareLogins(UserDao userDao) {
+        this.userDao = userDao;
     }
 
     protected boolean isLoginUnused(String login) {
         getLoginsList();
-        if (loginsList == null) {
+        if (users == null) {
             return true;
         }
-        for (String loginFromDB : loginsList) {
+        for (User user : users) {
+            String loginFromDB = user.getLogin();
             if (login.equals(loginFromDB)) {
                 return false;
             }
@@ -31,6 +35,6 @@ class CompareLogins {
     }
 
     private void getLoginsList() {
-        loginsList = createAccountRepository.getAllUsersLoginsList();
+        users = userDao.getAll();
     }
 }

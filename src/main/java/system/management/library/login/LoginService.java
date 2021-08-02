@@ -1,7 +1,8 @@
 package system.management.library.login;
 
 
-import system.management.library.User;
+import system.management.library.database.UserDao;
+import system.management.library.users.User;
 
 /**
  * Created by Home on 2021-07-21.
@@ -10,15 +11,15 @@ class LoginService {
     private static final String LOGIN_OR_PASSWORD_IS_TOO_SHORT = "Login or password is too short";
     private static final String LOGIN_OR_PASSWORD_IS_NOT_CORRECT = "Login or password is not correct";
     private static final String LOGIN_SUCCESS = "Ok";
-    private LoginRepository loginRepository;
+    private UserDao userDao;
     private User user = null;
 
     protected LoginService() {
-        this(new LoginRepository());
+        this(new UserDao());
     }
 
-    protected LoginService(LoginRepository loginRepository) {
-        this.loginRepository = loginRepository;
+    protected LoginService(UserDao userDao) {
+        this.userDao = userDao;
     }
 
     protected String loginReturnValue(String login, String password) {
@@ -39,7 +40,7 @@ class LoginService {
     }
 
     private void getUser(String login) {
-        user = loginRepository.getUserFromDB(login).orElse(null);
+        user = userDao.get(login).orElse(null);
         System.out.println(user);
     }
 

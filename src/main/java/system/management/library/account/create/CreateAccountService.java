@@ -1,5 +1,7 @@
 package system.management.library.account.create;
 
+import system.management.library.users.User;
+
 /**
  * Created by Home on 2021-07-23.
  */
@@ -32,7 +34,6 @@ class CreateAccountService {
 
     private void checkIfLoginAndPasswordContainMinThreeChar(String login, String password) {
         if (login.length() < 3 || password.length() < 3) {
-            System.out.println("nie");
             accountStatus = LOGIN_PASSWORD_TO_SHORT;
         }
     }

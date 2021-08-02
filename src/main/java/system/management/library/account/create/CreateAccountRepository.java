@@ -1,6 +1,6 @@
 package system.management.library.account.create;
 
-import system.management.library.HibernateUtil;
+import system.management.library.database.HibernateUtil;
 
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;

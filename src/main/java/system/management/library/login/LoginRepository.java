@@ -1,8 +1,8 @@
 package system.management.library.login;
 
 
-import system.management.library.HibernateUtil;
-import system.management.library.User;
+import system.management.library.database.HibernateUtil;
+import system.management.library.users.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;

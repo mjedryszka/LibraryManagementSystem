@@ -1,7 +1,8 @@
 package system.management.library.login;
 
 import org.junit.Test;
-import system.management.library.User;
+import system.management.library.database.UserDao;
+import system.management.library.users.User;
 
 import java.util.Optional;
 
@@ -22,9 +23,9 @@ public class LoginServiceTest {
         //given
         String login = "Bo";
         String password = "123";
-        LoginRepository loginRepository = mock(LoginRepository.class);
-        LoginService SUT = new LoginService(loginRepository);
-        when(loginRepository.getUserFromDB(login)).thenReturn(user());
+        UserDao userDao = mock(UserDao.class);
+        LoginService SUT = new LoginService(userDao);
+        when(userDao.get(login)).thenReturn(user());
         //when
         String result = SUT.loginReturnValue(login, password);
         //then
@@ -36,9 +37,9 @@ public class LoginServiceTest {
         //given
         String login = "Bor";
         String password = "12";
-        LoginRepository loginRepository = mock(LoginRepository.class);
-        LoginService SUT = new LoginService(loginRepository);
-        when(loginRepository.getUserFromDB(login)).thenReturn(user());
+        UserDao userDao = mock(UserDao.class);
+        LoginService SUT = new LoginService(userDao);
+        when(userDao.get(login)).thenReturn(user());
         //when
         String result = SUT.loginReturnValue(login, password);
         //then
@@ -50,9 +51,9 @@ public class LoginServiceTest {
         //given
         String login = "Bo";
         String password = "12";
-        LoginRepository loginRepository = mock(LoginRepository.class);
-        LoginService SUT = new LoginService(loginRepository);
-        when(loginRepository.getUserFromDB(login)).thenReturn(user());
+        UserDao userDao = mock(UserDao.class);
+        LoginService SUT = new LoginService(userDao);
+        when(userDao.get(login)).thenReturn(user());
         //when
         String result = SUT.loginReturnValue(login, password);
         //then
@@ -64,9 +65,9 @@ public class LoginServiceTest {
         //given
         String login = "Bor";
         String password = "123";
-        LoginRepository loginRepository = mock(LoginRepository.class);
-        LoginService SUT = new LoginService(loginRepository);
-        when(loginRepository.getUserFromDB(login)).thenReturn(Optional.<User>empty());
+        UserDao userDao = mock(UserDao.class);
+        LoginService SUT = new LoginService(userDao);
+        when(userDao.get(login)).thenReturn(Optional.<User>empty());
         //when
         String result = SUT.loginReturnValue(login, password);
         //then
@@ -78,9 +79,9 @@ public class LoginServiceTest {
         //given
         String login = "Bor";
         String password = "1234";
-        LoginRepository loginRepository = mock(LoginRepository.class);
-        LoginService SUT = new LoginService(loginRepository);
-        when(loginRepository.getUserFromDB(login)).thenReturn(user());
+        UserDao userDao = mock(UserDao.class);
+        LoginService SUT = new LoginService(userDao);
+        when(userDao.get(login)).thenReturn(user());
         //when
         String result = SUT.loginReturnValue(login, password);
         //then
@@ -92,9 +93,9 @@ public class LoginServiceTest {
         //given
         String login = "Bor";
         String password = "123";
-        LoginRepository loginRepository = mock(LoginRepository.class);
-        LoginService SUT = new LoginService(loginRepository);
-        when(loginRepository.getUserFromDB(login)).thenReturn(user());
+        UserDao userDao = mock(UserDao.class);
+        LoginService SUT = new LoginService(userDao);
+        when(userDao.get(login)).thenReturn(user());
         //when
         String result = SUT.loginReturnValue(login, password);
         //then
