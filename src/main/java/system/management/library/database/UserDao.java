@@ -17,9 +17,17 @@ public class UserDao implements Dao<User> {
     private EntityManager entityManager = HibernateUtil.getEntityManager();
 
     @Override
-    public Optional<User> get(String login)
-    {
-        return Optional.ofNullable(entityManager.find(User.class,login));
+    public Optional<User> get(String login) {
+        User user;
+        try {
+            user = entityManager.createQuery("SELECT u FROM User u WHERE u.login LIKE :login",User.class)
+                    .setParameter("login",login)
+                    .getSingleResult();
+        } catch (RuntimeException exc){
+            user = null;
+            exc.printStackTrace();
+        }
+        return Optional.ofNullable(user);
     }
 
     @Override

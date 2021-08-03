@@ -9,15 +9,16 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("employee")
 public class Employee extends User {
-    @Override
-    public String toString() {
-        return "employee";
-    }
 
     public Employee() {
     }
 
     public Employee(String login, String password) {
         super(login, password);
+    }
+
+    @Override
+    public String toString() {
+        return "employee";
     }
 }

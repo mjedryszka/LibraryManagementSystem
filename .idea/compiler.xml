@@ -22,8 +22,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="LibraryManagementSystem" />
         <module name="ManagementLibrarySystem" />
+      </profile>
+      <profile default="false" name="Annotation profile for LibraryManagementSystem" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="LibraryManagementSystem" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">

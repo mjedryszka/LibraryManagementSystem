@@ -9,15 +9,16 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("reader")
 public class ReaderUser extends User {
-    @Override
-    public String toString() {
-        return "Reader";
-    }
 
     public ReaderUser() {
     }
 
     public ReaderUser(String login, String password) {
         super(login, password);
+    }
+
+    @Override
+    public String toString() {
+        return "Reader";
     }
 }
