@@ -2,7 +2,6 @@ package system.management.library.database;
 
 import system.management.library.users.User;
 
-import javax.management.Query;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.NoResultException;
@@ -13,7 +12,7 @@ import java.util.function.Consumer;
 /**
  * Created by Home on 2021-08-02.
  */
-public class UserDao implements Dao<User> {
+public class UserDao implements DaoUser<User> {
     private EntityManager entityManager = HibernateUtil.getEntityManager();
 
     @Override

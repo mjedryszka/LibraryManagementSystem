@@ -66,6 +66,7 @@ document.getElementById("loginButton").addEventListener("click", (event) => {
     });
 
 document.getElementById("login").addEventListener("click",(event) =>{
+    event.preventDefault();
     document.getElementById("loginStatus").innerHTML = "";
     document.getElementById("loginPlaceholder").value = "";
     document.getElementById("passwordPlaceholder").value = "";
@@ -73,16 +74,41 @@ document.getElementById("login").addEventListener("click",(event) =>{
     });
 
 document.getElementById("createAccount").addEventListener("click",(event) =>{
+    event.preventDefault();
     document.getElementById("loginPlaceholderInCA").value = "";
     document.getElementById("passwordPlaceholderInCA").value = "";
     document.getElementById("repeatPasswordPlaceholderInCA").value = "";
     showForm("createAccountForm");
     });
-	
+
+document.getElementById("editAccount").addEventListener("click",(event) =>{
+    event.preventDefault();
+    document.getElementById("loginPlaceholderInEA").value = "";
+    document.getElementById("newLoginPlaceholderInEA").value = "";
+    showForm("editAccountForm");
+    });
+
+document.getElementById("deleteAccount").addEventListener("click",(event) =>{
+    event.preventDefault();
+    document.getElementById("loginPlaceholderInDA").value = "";
+    showForm("deleteAccountForm");
+    });
+
+document.getElementById("createNewEmployee").addEventListener("click",(event) =>{
+    event.preventDefault();
+    document.getElementById("loginPlaceholderInNEF").value = "";
+    document.getElementById("passwordPlaceholderInNEF").value = "";
+    document.getElementById("repeatPasswordPlaceholderInNEF").value = "";
+    showForm("createNewEmployeeForm");
+    });
+
 function showForm(id){
     document.getElementById("homePageForm").style.visibility = "hidden";
     document.getElementById("createAccountForm").style.visibility = "hidden";
     document.getElementById("loginForm").style.visibility = "hidden";
+    document.getElementById("editAccountForm").style.visibility = "hidden";
+    document.getElementById("deleteAccountForm").style.visibility = "hidden";
+    document.getElementById("createNewEmployeeForm").style.visibility = "hidden";
 
     document.getElementById(id).style.visibility = "visible";
 }

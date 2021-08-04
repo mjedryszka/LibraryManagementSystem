@@ -6,7 +6,7 @@ import java.util.Optional;
 /**
  * Created by Home on 2021-08-02.
  */
-public interface Dao<T> {
+public interface DaoUser<T> {
     Optional<T> get(String login);
 
     List<T> getAll();

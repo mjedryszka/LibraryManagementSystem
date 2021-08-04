@@ -15,18 +15,16 @@
     <!-- Left menu-->
     <div id="libraryLeftMenu">
         <!-- Left menu buttons-->
-        <button id="allBooksList" class="button">
-            All books list
-        </button>
-        <button id="searchByName" class="button">
-            Search by name
-        </button>
-        <button id="searchByCategory" class="button">
-            Search by category
-        </button>
-        <button id="searchByRating" class="button">
-            Search by rating
-        </button>
+        <form>
+            <button id="allBooksList" class="button">All positions list</button>
+            <button id="searchByName" class="button">Search by name</button>
+            <button id="searchByCategory" class="button">Search by category</button>
+            <button id="searchByRating" class="button">Search by rating</button>
+        </form>
+        <form id="employeeWorksPositions">
+            <button id="addNewPosition" class="button">Add new position</button>
+            <button id="deletePosition" class="button">Delete position</button>
+        </form>
     </div>
     <!-- Middle menu-->
     <div id="libraryCenterMenu">
@@ -38,9 +36,7 @@
         <form id="loginForm" class="manageAccountForm" style="visibility:hidden">
             <input id="loginPlaceholder" type="text" placeholder="Login" class="manageAccountInputs" />
             <input id="passwordPlaceholder" type="password" placeholder="Password" class="manageAccountInputs" />
-            <button id="loginButton" type="submit" class="manageAccountInputs">
-                Login
-            </button>
+            <button id="loginButton" type="submit" class="manageAccountInputs">Login</button>
             <br/>
             <label id="loginStatus" class="manageAccountInputs"></label>
         </form>
@@ -49,33 +45,55 @@
             <input id="loginPlaceholderInCA" type="email" placeholder="Login" class="manageAccountInputs" />
             <input id="passwordPlaceholderInCA" type="password" placeholder="Password" class="manageAccountInputs" />
             <input id="repeatPasswordPlaceholderInCA" type="password" placeholder="Repeat password" class="manageAccountInputs"/>
-            <button id="createAccountButtonInCA" type="submit" class="manageAccountInputs">
-                Create account
-            </button>
+            <button id="createAccountButtonInCA" type="submit" class="manageAccountInputs">Create account</button>
             <br/>
             <label id="createAccountStatus" class="manageAccountInputs"></label>
+        </form>
+        <!-- Edit account form-->
+        <form id="editAccountForm" class="manageAccountForm" style="visibility:hidden">
+            <input id="loginPlaceholderInEA" type="email" placeholder="Login" class="manageAccountInputs" />
+            <input id="newLoginPlaceholderInEA" type="email" placeholder="New login" class="manageAccountInputs" />
+            <input id="passwordPlaceholderInEA" type="email" placeholder="New password" class="manageAccountInputs" />
+            <button id="changeLoginButton" type="submit" class="manageAccountInputs">Change login</button></label>
+            <button id="changePasswordButton" type="submit" class="manageAccountInputs">Change password</button>
+            <br/>
+            <label id="changePasswordResult" class="manageAccountInputs"></label>
+        </form>
+        <!-- Delete account form-->
+        <form id="deleteAccountForm" class="manageAccountForm" style="visibility:hidden">
+            <input id="loginPlaceholderInDA" type="email" placeholder="Login" class="manageAccountInputs">
+            <button id="deleteAccountButton" type="submit" class="manageAccountInputs">Delete account</button>
+            <br/>
+            <label id="deleteAccountResult" class="manageAccountInputs"></label>
+        </form>
+        <!-- Create new employee form-->
+        <form id="createNewEmployeeForm" class="manageAccountForm" style="visibility:hidden">
+            <input id="loginPlaceholderInNEF" type="email" placeholder="Login" class="manageAccountInputs" />
+            <input id="passwordPlaceholderInNEF" type="password" placeholder="Password" class="manageAccountInputs" />
+            <input id="repeatPasswordPlaceholderInNEF" type="password" placeholder="Repeat password" class="manageAccountInputs"/>
+            <button id="createAccountButtonInNEF" type="submit" class="manageAccountInputs">Create account</button>
+            <br/>
+            <label id="createAccountStatusInNEF" class="manageAccountInputs"></label>
         </form>
     </div>
     <!-- Right menu-->
     <div id="libraryRightMenu">
-        <p id="userNameLabel">
-            User name
-        </p>
-        <button id="login" class="button">
-            Login
-        </button>
-        <button id="logout" class="button">
-            Logout
-        </button>
-        <button id="createAccount" class="button">
-            Create account
-        </button>
+        <form>
+            <p id="userNameLabel">User name</p>
+            <button id="login" class="button">Login</button>
+            <button id="logout" class="button">Logout</button>
+            <button id="createAccount" class="button">Create account</button>
+        </form>
         <!--Management account -->
         <!-- Extra menu for employee-->
-        <!--<form id="employeeManageAccountForm" class="manageAccountForm">-->
-            <!--<button id="editAccount" class="button">Edit account</button>-->
-            <!--<button id="deleteAccount" class="button">Delete account</button>-->
-        <!--</form>-->
+        <form id="employeeManageAccountForm" style="">
+            <button id="editAccount" class="button">Edit account</button>
+            <button id="deleteAccount" class="button">Delete account</button>
+        </form>
+        <!-- Extra menu for admin-->
+        <form id="adminManageAccountForm">
+            <button id="createNewEmployee" class="button">New employee</button>
+        </form>
     </div>
 </div>
 <!-- Script-->
