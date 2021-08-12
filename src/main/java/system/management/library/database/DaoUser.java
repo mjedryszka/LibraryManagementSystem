@@ -7,13 +7,15 @@ import java.util.Optional;
  * Created by Home on 2021-08-02.
  */
 public interface DaoUser<T> {
-    Optional<T> get(String login);
+    T get(String login);
 
     List<T> getAll();
 
     void save(T t);
 
-    void update(T t);
+    void updateLogin(T t, String changeParam);
+
+    void updatePassword(T t, String changeParam);
 
     void delete(T t);
 }

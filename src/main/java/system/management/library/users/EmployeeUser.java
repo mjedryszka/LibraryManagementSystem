@@ -8,17 +8,17 @@ import javax.persistence.Entity;
  */
 @Entity
 @DiscriminatorValue("employee")
-public class Employee extends User {
+public class EmployeeUser extends User {
 
-    public Employee() {
+    public EmployeeUser() {
     }
 
-    public Employee(String login, String password) {
+    public EmployeeUser(String login, String password) {
         super(login, password);
     }
 
     @Override
     public String toString() {
-        return "employee";
+        return Position.EMPLOYEE.toString();
     }
 }

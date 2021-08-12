@@ -19,6 +19,6 @@ public class AdminUser extends User {
 
     @Override
     public String toString() {
-        return "admin";
+        return Position.ADMIN.toString();
     }
 }

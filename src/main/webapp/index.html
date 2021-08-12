@@ -21,7 +21,7 @@
             <button id="searchByCategory" class="button">Search by category</button>
             <button id="searchByRating" class="button">Search by rating</button>
         </form>
-        <form id="employeeWorksPositions">
+        <form id="employeePositionsForm" style="visibility:hidden">
             <button id="addNewPosition" class="button">Add new position</button>
             <button id="deletePosition" class="button">Delete position</button>
         </form>
@@ -57,7 +57,7 @@
             <button id="changeLoginButton" type="submit" class="manageAccountInputs">Change login</button></label>
             <button id="changePasswordButton" type="submit" class="manageAccountInputs">Change password</button>
             <br/>
-            <label id="changePasswordResult" class="manageAccountInputs"></label>
+            <label id="changeResult" class="manageAccountInputs"></label>
         </form>
         <!-- Delete account form-->
         <form id="deleteAccountForm" class="manageAccountForm" style="visibility:hidden">
@@ -70,7 +70,6 @@
         <form id="createNewEmployeeForm" class="manageAccountForm" style="visibility:hidden">
             <input id="loginPlaceholderInNEF" type="email" placeholder="Login" class="manageAccountInputs" />
             <input id="passwordPlaceholderInNEF" type="password" placeholder="Password" class="manageAccountInputs" />
-            <input id="repeatPasswordPlaceholderInNEF" type="password" placeholder="Repeat password" class="manageAccountInputs"/>
             <button id="createAccountButtonInNEF" type="submit" class="manageAccountInputs">Create account</button>
             <br/>
             <label id="createAccountStatusInNEF" class="manageAccountInputs"></label>
@@ -86,12 +85,12 @@
         </form>
         <!--Management account -->
         <!-- Extra menu for employee-->
-        <form id="employeeManageAccountForm" style="">
+        <form id="employeeManageAccountForm" style="visibility:hidden">
             <button id="editAccount" class="button">Edit account</button>
             <button id="deleteAccount" class="button">Delete account</button>
         </form>
         <!-- Extra menu for admin-->
-        <form id="adminManageAccountForm">
+        <form id="adminManageAccountForm" style="visibility:hidden">
             <button id="createNewEmployee" class="button">New employee</button>
         </form>
     </div>

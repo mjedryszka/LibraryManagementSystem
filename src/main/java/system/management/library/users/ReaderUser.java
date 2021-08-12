@@ -19,6 +19,6 @@ public class ReaderUser extends User {
 
     @Override
     public String toString() {
-        return "Reader";
+        return Position.READER.toString();
     }
 }

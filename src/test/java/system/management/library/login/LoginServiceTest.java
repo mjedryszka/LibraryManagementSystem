@@ -2,6 +2,9 @@ package system.management.library.login;
 
 import org.junit.Test;
 import system.management.library.database.UserDao;
+import system.management.library.users.AdminUser;
+import system.management.library.users.EmployeeUser;
+import system.management.library.users.ReaderUser;
 import system.management.library.users.User;
 
 import java.util.Optional;
@@ -16,7 +19,6 @@ import static org.mockito.Mockito.when;
 public class LoginServiceTest {
     private static final String LOGIN_OR_PASSWORD_IS_TOO_SHORT = "Login or password is too short";
     private static final String LOGIN_OR_PASSWORD_IS_NOT_CORRECT = "Login or password is not correct";
-    private static final String LOGIN_SUCCESS = "Ok";
 
     @Test
     public void test_loginReturnValue_returnLoginToShort() {
@@ -67,7 +69,7 @@ public class LoginServiceTest {
         String password = "123";
         UserDao userDao = mock(UserDao.class);
         LoginService SUT = new LoginService(userDao);
-        when(userDao.get(login)).thenReturn(Optional.<User>empty());
+        when(userDao.get(login)).thenReturn(null);
         //when
         String result = SUT.loginReturnValue(login, password);
         //then
@@ -89,24 +91,72 @@ public class LoginServiceTest {
     }
 
     @Test
-    public void test_loginReturnValue_returnLoginSuccess() {
+    public void test_loginReturnValue_returnReader() {
         //given
         String login = "Bor";
         String password = "123";
+        String loginSuccess = "READER";
         UserDao userDao = mock(UserDao.class);
         LoginService SUT = new LoginService(userDao);
-        when(userDao.get(login)).thenReturn(user());
+        when(userDao.get(login)).thenReturn(userReader());
         //when
         String result = SUT.loginReturnValue(login, password);
         //then
-        assertEquals(LOGIN_SUCCESS, result);
+        assertEquals(loginSuccess, result);
     }
 
-    private Optional<User> user() {
+    @Test
+    public void test_loginReturnValue_returnEmployee() {
+        //given
+        String login = "Bor";
+        String password = "123";
+        String loginSuccess = "EMPLOYEE";
+        UserDao userDao = mock(UserDao.class);
+        LoginService SUT = new LoginService(userDao);
+        when(userDao.get(login)).thenReturn(userEmployee());
+        //when
+        String result = SUT.loginReturnValue(login, password);
+        //then
+        assertEquals(loginSuccess, result);
+    }
+
+    @Test
+    public void test_loginReturnValue_returnAdmin() {
+        //given
+        String login = "Bor";
+        String password = "123";
+        String loginSuccess = "ADMIN";
+        UserDao userDao = mock(UserDao.class);
+        LoginService SUT = new LoginService(userDao);
+        when(userDao.get(login)).thenReturn(userAdmin());
+        //when
+        String result = SUT.loginReturnValue(login, password);
+        //then
+        assertEquals(loginSuccess, result);
+    }
+
+    private User user() {
         String login = "bor";
         String password = "123";
-        User user = new User(login, password);
-        return Optional.ofNullable(user);
+        return new User(login, password);
+    }
+
+    private User userReader() {
+        String login = "bor";
+        String password = "123";
+        return new ReaderUser(login, password);
+    }
+
+    private User userEmployee() {
+        String login = "bor";
+        String password = "123";
+        return new EmployeeUser(login, password);
+    }
+
+    private User userAdmin() {
+        String login = "bor";
+        String password = "123";
+        return new AdminUser(login, password);
     }
 
 }

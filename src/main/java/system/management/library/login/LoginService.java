@@ -10,9 +10,10 @@ import system.management.library.users.User;
 class LoginService {
     private static final String LOGIN_OR_PASSWORD_IS_TOO_SHORT = "Login or password is too short";
     private static final String LOGIN_OR_PASSWORD_IS_NOT_CORRECT = "Login or password is not correct";
-    private static final String LOGIN_SUCCESS = "Ok";
+    private String loginSuccess;
     private UserDao userDao;
     private User user = null;
+    
 
     protected LoginService() {
         this(new UserDao());
@@ -26,7 +27,8 @@ class LoginService {
         if (isLoginAndPasswordContainMinThreeChar(login, password)) {
             getUser(login);
             if (isUserExist() && confirmPassword(password)) {
-                return LOGIN_SUCCESS;
+                loginSuccess = user.toString();
+                return loginSuccess;
             }
             return LOGIN_OR_PASSWORD_IS_NOT_CORRECT;
         }
@@ -40,8 +42,7 @@ class LoginService {
     }
 
     private void getUser(String login) {
-        user = userDao.get(login).orElse(null);
-        System.out.println(user);
+        user = userDao.get(login);
     }
 
     private boolean isUserExist() {

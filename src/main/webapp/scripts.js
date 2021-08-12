@@ -25,8 +25,7 @@ document.getElementById("createAccountButtonInCA").addEventListener("click", (ev
     .then(response => response.text())
     .then((text) => {
         if(text == "Ok"){
-            document.getElementById("userNameLabel").innerHTML = createAccountObj.login;
-        	document.getElementById("userNameLabel").style.backgroundColor = "green"
+            document.getElementById("createAccountStatus").innerHTML = text;
             showForm("homePageForm");
         }else{
             document.getElementById("createAccountStatus").innerHTML = text;
@@ -37,10 +36,82 @@ document.getElementById("createAccountButtonInCA").addEventListener("click", (ev
         });
     });
 
+document.getElementById("createAccountButtonInNEF").addEventListener("click", (event) => {
+    event.preventDefault();
+    const createAccountEmployeeObj = {
+        login: createAccountForm.elements.loginPlaceholderInNEF.value,
+        password: createAccountForm.elements.passwordPlaceholderInNEF.value,
+        };
+    fetch(LMS_URL + "/createemployeeaccount" + "?" + new URLSearchParams(createAccountEmployeeObj))
+    .then(response => response.text())
+    .then((text) => {
+        if(text == "Ok"){
+            document.getElementById("createAccountStatusInNEF").innerHTML = text;
+            showForm("homePageForm");
+        }else{
+            document.getElementById("createAccountStatusInNEF").innerHTML = text;
+            document.getElementById("loginPlaceholderInNEF").value = "";
+            document.getElementById("passwordPlaceholderInNEF").value = "";
+            }
+        });
+    });
+
+document.getElementById("changePasswordButton").addEventListener("click",(event) => {
+    event.preventDefault();
+    const changePasswordObj = {
+        login: editAccountForm.elements.loginPlaceholderInEA.value,
+        newPassword: editAccountForm.elements.passwordPlaceholderInEA.value
+    };
+    fetch(LMS_URL + "/editaccount/changepassword" + "?" + new URLSearchParams(changePasswordObj))
+    .then(response => response.text())
+    .then((text) => {
+        document.getElementById("changeResult").innerHTML = text;
+        if(text == "passwordChanged"){
+            document.getElementById("loginPlaceholderInEA").value="";
+            document.getElementById("newLoginPlaceholderInEA").value=""
+            document.getElementById("passwordPlaceholderInEA").value=""
+        }
+    });
+});
+
+document.getElementById("changeLoginButton").addEventListener("click",(event) => {
+    event.preventDefault();
+    const changeLoginObj = {
+        login: editAccountForm.elements.loginPlaceholderInEA.value,
+        newLogin: editAccountForm.elements.newLoginPlaceholderInEA.value
+    };
+    fetch(LMS_URL + "/editaccount/changelogin" + "?" + new URLSearchParams(changeLoginObj))
+    .then(response => response.text())
+    .then((text) => {
+        document.getElementById("changeResult").innerHTML = text;
+        if(text == "loginChanged"){
+            document.getElementById("loginPlaceholderInEA").value="";
+            document.getElementById("newLoginPlaceholderInEA").value=""
+            document.getElementById("passwordPlaceholderInEA").value=""
+        }
+    });
+});
+
+document.getElementById("deleteAccountButton").addEventListener("click", (event) => {
+    event.preventDefault();
+    const deleteAccountObj = {
+        login: deleteAccountForm.elements.loginPlaceholderInDA.value
+        };
+    fetch(LMS_URL + "/deleteaccount" + "?" + new URLSearchParams(deleteAccountObj))
+    .then(response => response.text())
+    .then((text) => {
+        document.getElementById("deleteAccountResult").innerHTML = text;
+        if(text == "Account deleted"){
+            document.getElementById("loginPlaceholderInDA").value="";
+        }
+    });
+});
+
 document.getElementById("logout").addEventListener("click", (event) => {
     event.preventDefault();
     document.getElementById("userNameLabel").innerHTML = "User name";
     document.getElementById("userNameLabel").style.backgroundColor = "lightgray";
+    hideExtraButtons();
     showForm("homePageForm");
     });
 
@@ -53,10 +124,20 @@ document.getElementById("loginButton").addEventListener("click", (event) => {
     fetch(LMS_URL + "/login" + "?" + new URLSearchParams(loginObj))
     .then(response => response.text())
     .then((text) => {
-        if(text == "Ok"){
-            document.getElementById("userNameLabel").innerHTML = loginObj.login;
-			document.getElementById("userNameLabel").style.backgroundColor = "green"
+        if(text == "READER"){
+            hideExtraButtons();
+            showLogin(loginObj.login);
             showForm("homePageForm");
+        }else if(text == "EMPLOYEE"){
+            hideExtraButtons();
+            showLogin(loginObj.login);
+            showEmployeeButtons();
+            showForm("homePageForm");
+        }else if(text == "ADMIN"){
+            hideExtraButtons();
+            showLogin(loginObj.login);
+            showAdminButtons();
+            showForm("homePageForm")
         }else{
             document.getElementById("loginStatus").innerHTML = text;
             document.getElementById("loginPlaceholder").value = "";
@@ -111,6 +192,28 @@ function showForm(id){
     document.getElementById("createNewEmployeeForm").style.visibility = "hidden";
 
     document.getElementById(id).style.visibility = "visible";
+}
+
+function showLogin(login){
+    document.getElementById("userNameLabel").innerHTML = login;
+    document.getElementById("userNameLabel").style.backgroundColor = "green"
+}
+
+function showEmployeeButtons(){
+    document.getElementById("employeeManageAccountForm").style.visibility = "visible";
+    document.getElementById("employeePositionsForm").style.visibility = "visible";
+}
+
+function showAdminButtons(){
+    document.getElementById("employeeManageAccountForm").style.visibility = "visible";
+    document.getElementById("employeePositionsForm").style.visibility = "visible";
+    document.getElementById("adminManageAccountForm").style.visibility = "visible";
+}
+
+function hideExtraButtons(){
+    document.getElementById("employeeManageAccountForm").style.visibility = "hidden";
+    document.getElementById("employeePositionsForm").style.visibility = "hidden";
+    document.getElementById("adminManageAccountForm").style.visibility = "hidden";
 }
 
 
